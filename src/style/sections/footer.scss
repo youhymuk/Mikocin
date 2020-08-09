@@ -1,0 +1,34 @@
+.footer {
+	padding: rem(25px) 0;
+	position: relative;
+	&:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+		height: 50px;
+		top: -25px;
+		background:url('../assets/img/wave-bot.png') 50% 0 no-repeat;
+		z-index: 1;
+		@include phones {
+			top: -30px;
+		}
+  }
+}
+
+.copy {
+	@include flex(center, center);
+	@include tablets {
+		justify-content: space-around;
+	}
+  &__item {
+    width: calc(100% / 12 * 4 - 30px);
+		text-align: center;
+		@include Roboto (500);
+		&_author {
+			@include phones {
+				width: 100%;
+			}
+		}
+  }
+}

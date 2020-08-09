@@ -1,0 +1,116 @@
+.usage {
+  background: url('../assets/img/usage-bg.png') no-repeat center / cover;
+  padding: rem(75px) 0;
+}
+
+.usage__title {
+  margin-bottom: rem(75px);
+  position: relative;
+  &:before {
+		content: '';
+		@extend %pseudo;
+    width: 81px;
+    height: 56px;
+    top: -55px;
+		background: url('../assets/img/logo.png') no-repeat;
+  }
+}
+
+.usage__wrap {
+	@include flex(center, flex-end);
+	@include laptop {
+		justify-content: flex-end;
+	}
+	@include tablets {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.usage__medicines {
+  position: relative;
+  text-align: right;
+  width: calc(100% / 12 * 5 - 30px);
+	margin-right: rem(35px);
+	@include desktop {
+		width: calc(100% / 12 * 6 - 30px);
+	}
+	@include laptop {
+		width: calc(100% / 12 * 4 - 30px);
+	}
+	@include tablets {
+		margin: 0 0 30px;
+	}
+	@include phones {
+		width: calc(100% / 12 * 3 - 30px);
+		min-width: 92px;
+	}
+}
+
+.usage__instructions {
+	width: calc(100% / 12 * 5 - 30px);
+	@include laptop {
+		width: calc(100% / 12 * 4 - 30px);
+	}
+}
+
+.usage__tabs {
+	position: absolute;
+	bottom: -15px;
+	@include laptop {
+		max-width: 307px;
+		left: -140px;
+	}
+	@include tablets {
+		max-width: 230px;
+		left: -115px;
+	}
+	@include phones {
+		max-width: 150px;
+		left: -75px;
+	}
+}
+
+.usage__steps {
+  @include flex(flex-start, center);
+  margin-bottom: rem(31px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.usage__pic {
+  border: rem(7px) solid #f64d01;
+  background-color: #fff;
+  position: relative;
+  width: rem(119px);
+  height: rem(119px);
+  border-radius: 50%;
+  margin-right: rem(37px);
+  @include flex(center, center)
+    &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: rem(119px);
+    height: rem(119px);
+    border-radius: 50%;
+    border: rem(8px) solid rgba(#e5d0b9, 0.5);
+  }
+}
+
+.usage__desc {
+  width: rem(218px);
+  font-size: rem(18px);
+  @include Roboto(500);
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #7bbf1c;
+    position: absolute;
+    top: -20px;
+  }
+}

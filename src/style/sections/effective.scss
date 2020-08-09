@@ -1,0 +1,122 @@
+.effective {
+  padding: rem(125px) 0 rem(75px);
+	&:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+		height: 50px;
+		bottom: -15px;
+		background:url('../assets/img/wave-top.png') 50% 100% no-repeat;
+		z-index: 1;
+	}
+	&:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+		height: 50px;
+		top: -11px;
+		background:url('../assets/img/wave-bot.png') 50% 0 no-repeat;
+		z-index: 1;
+  }
+}
+
+.orange {
+  color: $orange;
+}
+
+.effect-header {
+  margin-bottom: rem(90px);
+  position: relative;
+  &:before {
+		content: '';
+		@extend %pseudo;
+    width: 49px;
+    height: 49px;
+    top: -60px;
+    background: url('../assets/img/decor1.png') no-repeat;
+  }
+}
+
+.effect-header__title {
+  margin-bottom: rem(24px);
+}
+
+.effect-header__text {
+  text-align: center;
+  font-size: rem(23px);
+}
+
+.effect-methods {
+  @include flex(space-between, stretch);
+	margin-bottom: rem(32px);
+	flex-wrap: wrap;
+	@include laptop {
+		justify-content: space-around;
+	}
+}
+
+.effect-methods__item {
+  width: calc(100% / 12 * 4 - 30px);
+  border: 4px solid #fa4f01;
+  border-radius: 10px;
+  padding: rem(85px) rem(20px) rem(36px);
+	position: relative;
+  &_green {
+    border-color: #62bd1f;
+	}
+	@include laptop {
+		width: calc(100% / 12 * 6 - 30px);
+		&:not(:last-child) {
+			margin-bottom: 60px;
+		}
+	}
+	@include phones {
+		width: calc(100% - 30px);
+	}
+}
+
+.effect-methods__pic {
+	@extend %pseudo;
+	@include flex(center, center);
+  top: rem(-62px);
+  width: rem(110px);
+  height: rem(110px);
+  background-color: #fff;
+	border-radius: 50%;
+  border-bottom: 4px solid $orange;
+  &_green {
+		border-color: #62bd1f;
+		img {
+			max-width: 80px;
+		}
+  }
+}
+
+.effect-methods__title {
+	margin-bottom: rem(17px);
+}
+
+.effect-methods__desc {
+	font-size: rem(18px);
+	text-align: center;
+}
+
+.effect-par {
+  max-width: 864px;
+  text-align: center;
+  font-size: rem(27px);
+  padding: 30px;
+	border-left: 4px solid #f64d01;
+	border-right: 4px solid #62bc1f;
+	background-position: 0 0, 0 100% ;
+	background-repeat: no-repeat;
+  background-size: 100% 4px;
+	background-image: linear-gradient(to right, #f64d01 0%, #62bc1f 100%), linear-gradient(to right, #f64d01 0%, #62bc1f 100%);
+  border-radius: 10px;
+	margin: 0 auto;
+	@include phones {
+		width: calc(100% - 30px);
+	}
+}

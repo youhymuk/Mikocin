@@ -1,0 +1,28 @@
+//adjustment variables
+$body-font: 'Roboto', sans-serif;
+$container-width: 1170px;
+$offset: rem(30px);
+
+//colors
+$main-text: #444;
+$dark: #383334;
+$bg-light: #f3f9ff;
+$green: #a8ca3f;
+$orange: #ff6b00;
+$black: #000;
+$grey: #666;
+$yellow-grad: linear-gradient(to right, #ffbc02 0%, #ffce02 100%);
+
+
+//layout
+@import './misc/fonts';
+@import './misc/mixins';
+@import './misc/adjustment';
+
+//sections
+@import './sections/header';
+@import './sections/fungus';
+@import './sections/ineffective';
+@import './sections/effective';
+@import './sections/usage';
+@import './sections/footer';

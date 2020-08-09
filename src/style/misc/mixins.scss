@@ -1,0 +1,65 @@
+//font
+@mixin Roboto($weight: 400) {
+	font-family: 'Roboto Regular';
+
+	@if $weight == 300 {
+		font-family: 'Roboto Light';
+	}
+
+	@if $weight == 500 {
+		font-family: 'Roboto Medium';
+	}
+
+	@if $weight == 700 {
+		font-family: 'Roboto Bold';
+	}
+
+	@if $weight == 900 {
+		font-family: 'Roboto Black';
+	}
+}
+
+@mixin flex($posX: flex-start, $posY: flex-start) {
+	display: flex;
+	justify-content: $posX;
+	align-items: $posY;
+}
+
+//992-1200px
+@mixin desktop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+//768-992px
+@mixin laptop {
+	@media screen and (max-width: 991px) {
+		@content;
+	}
+}
+
+//576-768px
+@mixin tablets {
+	@media screen and (max-width: 767px) {
+		@content;
+	}
+}
+
+//320-576px
+@mixin phones {
+	@media screen and (max-width: 575px) {
+		@content;
+	}
+}
+
+//responsive
+@function rem($px) {
+	@return $px / 16px + 0rem;
+}
+
+%pseudo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}

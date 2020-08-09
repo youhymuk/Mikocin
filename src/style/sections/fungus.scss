@@ -1,0 +1,202 @@
+.fungus {
+	padding: rem(200px) 0 rem(116px);
+	&:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+		height: 50px;
+		bottom: -17px;
+		background:url('../assets/img/wave-top.png') 50% 100% no-repeat;
+		z-index: 1;
+	}
+	&:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+		height: 50px;
+		top: -29px;
+		background:url('../assets/img/wave-bot.png') 50% 0 no-repeat;
+		z-index: 1;
+  }
+}
+
+.fungus-header {
+	margin-bottom: rem(47px);
+	&:before {
+		content: '';
+		@extend %pseudo;
+    width: 81px;
+    height: 56px;
+		top: 120px;
+    background: url(../assets/img/logo.png) no-repeat;
+	}
+	&__title {
+		margin-bottom: rem(35px);
+	}
+	&__text {
+		color: #2b2828;
+		font-size: rem(24px);
+		@include Roboto(700);
+		text-align: center;
+	}
+}
+
+.fungus-diseases {
+	@include flex(flex-start);
+	margin-bottom:  rem(73px);
+	counter-reset: block;
+	@include desktop {
+		justify-content: space-around;
+	}
+	@include tablets {
+		flex-wrap: wrap;
+	}
+	
+}
+
+.fungus-diseases__item {
+	width: calc(100% / 12 * 4 - 30px);
+	&:not(:last-child) {
+		margin-right: rem(50px);
+	}
+	&:nth-child(2) {
+		svg.fungus-diseases__circle-pic {
+			stroke: #e47643;
+		}
+		.fungus-diseases__numb {
+			background-color: #e47643;
+		}
+	}
+	&:nth-child(3) {
+		.fungus-diseases__numb {
+			background-color: #ec5b19;
+		}
+		svg.fungus-diseases__circle-pic {
+			stroke: #ec5b19;
+		}
+	}
+	@include tablets {
+		width: calc(50% - 30px);
+		margin-right: 0 !important;
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+	@include phones {
+		width: calc(100% - 30px);
+	}
+
+}
+
+.fungus-diseases__example {
+	@include flex(flex-start, center);
+	margin-bottom: rem(54px);
+	@include desktop {
+		flex-direction: column;
+	}
+}
+
+.fungus-diseases__img {
+	position: relative;
+	margin-right: rem(19px);
+	flex: none;
+	@include laptop {
+		max-width: 150px;
+	}
+	@include phones {
+		max-width: 140px;
+	}
+}
+
+.fungus-diseases__circle {
+	position: absolute;
+	width: rem(212px);
+	height: rem(212px);
+	left: -22px;
+	top: -25px;
+	transform: rotate(170deg);
+	&-pic {
+		fill: transparent;
+		stroke-width: 8px;
+		stroke: #ec9a6a;
+		stroke-dashoffset: 0;
+		stroke-dasharray: 170, 470;
+	 }
+}
+
+.fungus-diseases__numb {
+	position: absolute;
+	@include flex(center, center);
+  top: -7px;
+  right: 0;
+  width: rem(50px);
+  height: rem(50px);
+  background-color: #ec9a6a;
+	border-radius: 50%;
+	flex: none;
+	&:after {
+		content: counter(block);
+		counter-increment: block;
+		font-size: rem(30px);
+		color: #fff;
+	}
+	@include laptop {
+		right: -7px;
+	}
+	@include phones {
+		right: 0;
+	}
+}
+
+.fungus-diseases__title {
+	@include Roboto(500);
+	line-height: rem(26px);
+	@include desktop {
+		text-align: center;
+	}
+}
+
+.fungus-diseases__desc {
+	font-size: rem(18px);
+	line-height: rem(28px);
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 50px;
+		height: 3px;
+		background-color: #becbd8;
+		display: block;
+		left: 0;
+		top: -20px;
+	}
+	@include phones {
+		text-align: center;
+		&:before{
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+.fungus-diseases__stat {
+	width: 100%;
+	border: 3px solid #f4d3bb;
+	border-radius: 5px;
+	padding: rem(40px);
+	position: relative;
+	&:before {
+		content: '';
+		@extend %pseudo;
+		width: rem(170px);
+		height: 37px;
+		top: -23px;
+		background: #fff url('../assets/img/diagram.svg') no-repeat center bottom;
+	}
+	&-txt {
+		font-size: rem(22px);
+		text-align: center;
+	}
+}
